@@ -1,225 +1,170 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>КирпичСтрой – Облицовочные материалы (один файл)</title>
-<style>
-:root{
-    --bg-primary:#000;      /* чёрный фон */
-    --bg-secondary:#111;    /* темно‑серый */
-    --text-primary:#fff;
-    --text-secondary:#ccc;
-    --accent:#ffcc00;       /* ярко‑жёлтый */
-    --accent-dark:#cc9900;
-    --border:#222;
-    --shadow:rgba(0,0,0,.8);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:Arial,sans-serif;
-    background:var(--bg-primary);
-    color:var(--text-primary);
-    overflow-x:hidden;
-}
-.top-bar{
-    position:fixed;top:0;left:0;width:100%;
-    padding:.5rem 1.5rem;
-    background:rgba(0,0,0,.7);
-    display:flex;justify-content:space-between;align-items:center;
-    font-size:.95rem;color:var(--text-primary);
-    backdrop-filter:blur(4px);border-bottom:1px solid var(--border);
-    z-index:10;
-}
-.top-bar .brand{font-weight:600;font-size:1.1rem}
-.top-bar .address{font-size:.9rem;text-align:right}
-.hero,.section{margin-top:3rem}
-.hero{
-    height:100vh;position:relative;overflow:hidden;
-    display:flex;flex-direction:column;justify-content:center;align-items:center;
-    text-align:center;padding:0 20px;background:var(--bg-primary);
-}
-.hero-bg{
-    position:absolute;top:0;left:0;width:100%;height:100%;
-    background:
-        linear-gradient(135deg,rgba(0,0,0,.9)0%,rgba(20,20,20,.8)50%,rgba(0,0,0,1)100%),
-        url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGR8aGRgZGRodHR0dHR0eHR0dHR0aHSggGBolHR0eITEhJSkrLi4uHR8zODMtNygtLisBCgoKDg0OGxAQGy0lHyYtLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgcBAv/EADcQAAEDAwIEAwUHBQAAAAAAABAgMEBRESITEGE1FhcYGRkaGxBzKxwdHwFTLh8f/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EAC8RAAICAQIEBAYDAQAAAAAAAAABAhEDBBIhMUEFE1FhcnGRobHR8COx/9oADAMBAAIRAxEAPwD9RREQEREBERAJPcKpG2yZJpPVNQRhQTextTukJALdwJIBfJ4I+NQ6nUnDv6TGbfKsA+SxfrXoxz0mlhY2lZncscCv8AhDSqpVqhSqPXzNK5jTmmt/6hvvR1Hti5eT9Vfym+CdOdjBXproObGcDQGkXyUHuMypvKl5XV6gy6RDUyV81r3QVFJwuKN1VFTeXKNccjbuW/ogKsrJYZ5UaYkEekSO6P1K/BYJsvBad8rbv8AVeL/OPWrEZ3vVY4Tb8MTHNqWHU45kRLUAKpAmcU8VB20lG9QSQRM8iqZGoMLPmZgEBe/A9R40th4krUjVF6GZduzTZA5FpuWAt4RslI9coRKMpVaBt0qj/MmlP5QXgslSaKKj04JR1dHxUjTZKzPE/eJt+T3FKDlBJRttJJFwbpOQ6Ta3GZeQrqioyqgtP6RUERAREQEREBERCB40ZUTeV+F0f1KIR6j22x+X6FN9jjudIs73SBgj9CeDvG3A9B4k52vNgk5ZMGW+Uu3x8e8R6bJYj5S6Ofaw4Z4by7RBooh7w6/EZ1hqDyv55bzTT/ADj+8et9Jn5jHlTKbjU+DY+0if4qdOlWJ5Lj00+0TfWsonKDknkOfKT6PXrWX5fHcjtS3eQCnM9ZJY9XyVSR+JQraMSX4rVEUqIkWo+iFIR9kwXH7Ug9PDPeRY7g9Tz3EhXNI6bNOlh1xYYhqOKsSS1IR4P3rkntIpMLALMPOeJxve8Y+5zpJRqVebcUvcHplNYFK3dC7vD5b/E9s6dvGPrXKsscz6jDgpHDRcYHqmVtSaanUQgXLbhVe5VpY8nKcDunLBH4/jgPPWnXbeThKv19PjrWdK+1s7V0uy2jE4gPrEFNV3OrPDixfPP0HoFW/mvHmTeRshOWnfyklV7STvlIpGJnZHzR9SuB3cOGHfv8ibJiLE05QeA16LoXTlPVZ7CPLkaRLAt8mkasVSc+RwYY9UeF8jK+rsSpeu5TbilOlrfJVR7g6z/D8PpxXJyKDJ9ymDyGzadqvFzGVp9luW/77OHg78REz06x0Ip+PMuLPOZUk4rXWqKcPPcJ4BI5A+FA43057zV9SS0nJiYUzQ8KGUjqtrRI+GPrgD8u+h9182ftVd7R5zp+dif+046qw0zO3t3/FDW03IG35IfqcqdZat9BUPeVQEREBERAREQEREAQf/2Q==');
-    background-size:cover;will-change:transform;
-}
-.hero-bg::before{
-    content:'';position:absolute;top:0;left:0;width:100%;height:100%;
-    background:
-        radial-gradient(circle at 20% 80%,rgba(255,204,0,.15)0%,transparent 40%),
-        radial-gradient(circle at 80% 20%,rgba(255,204,0,.1)0%,transparent 40%);
-    animation:glow 8s ease-in-out infinite alternate;
-}
-@keyframes glow{0%{opacity:.3;transform:scale(1)}100%{opacity:.8;transform:scale(1.05)}}
-.hero h1{
-    font-size:4.5rem;margin-bottom:1.5rem;
-    text-shadow:3px 3px 6px var(--shadow);
-    opacity:0;transform:translateY(60px);
-    animation:slideInUp 1.5s ease-out forwards;
-    border-bottom:2px solid var(--accent);padding-bottom:1rem;
-}
-@keyframes slideInUp{to{opacity:1;transform:translateY(0)}}
-.hero p{
-    font-size:1.6rem;margin-bottom:2.5rem;max-width:900px;
-    opacity:0;transform:translateY(40px);
-    animation:slideInUp 1.5s ease-out .4s forwards;
-}
-.cta{
-    display:inline-block;background:linear-gradient(45deg,var(--accent),#ff9900);
-    color:#000;padding:1.2rem 3rem;text-decoration:none;
-    font-size:1.3rem;font-weight:bold;border-radius:50px;
-    transition:all .4s ease;opacity:0;transform:translateY(40px) scale(.95);
-    animation:slideInUp 1.5s ease-out .8s forwards;
-    position:relative;overflow:hidden;z-index:2;
-    box-shadow:0 15px 30px rgba(255,204,0,.4);
-}
-.cta::before{
-    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
-    transition:left .6s;
-}
-.cta:hover::before{left:100%}
-.cta:hover{
-    transform:scale(1.1);
-    box-shadow:0 20px 40px rgba(255,204,0,.6);
-    background:linear-gradient(45deg,var(--accent-dark),#ff6600);
-}
-section{
-    padding:100px 20px;max-width:1400px;margin:0 auto;
-    background:var(--bg-primary);
-}
-h2{
-    font-size:3rem;text-align:center;margin-bottom:4rem;
-    color:var(--accent);text-shadow:2px 2px 4px var(--shadow);
-}
-.materials{
-    background:var(--bg-secondary);
-    border-radius:20px;padding:60px;border:1px solid var(--border);
-}
-.materials-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:2.5rem;
-}
-.material-card{
-    background:rgba(17,17,17,.8);
-    padding:2.5rem;border-radius:15px;
-    border-left:5px solid var(--accent);
-    transition:all .4s ease;backdrop-filter:blur(10px);
-}
-.material-card:hover{
-    transform:translateY(-15px) scale(1.02);
-    background:rgba(255,204,0,.1);
-    box-shadow:0 20px 40px rgba(255,204,0,.2);
-}
-.gallery-section{background:var(--bg-primary);}
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
-    gap:2rem;
-}
-.gallery img{
-    width:100%;height:300px;object-fit:cover;
-    border-radius:15px;transition:all .4s ease;
-    border:2px solid transparent;
-}
-.gallery img:hover{
-    transform:scale(1.08);
-    border-color:var(--accent);
-    box-shadow:0 20px 40px rgba(255,204,0,.3);
-}
-.contacts{
-    background:var(--bg-secondary);
-    text-align:center;border-radius:20px;padding:60px;
-    border:1px solid var(--border);
-}
-.contacts p{
-    font-size:1.4rem;margin-bottom:1.5rem;
-    color:var(--text-secondary);
-}
-footer{
-    background:var(--bg-primary);
-    text-align:center;padding:3rem;
-    border-top:2px solid var(--border);
-    color:var(--text-secondary);
-}
-@media(max-width:768px){
-    .hero h1{font-size:3rem}
-    .hero p{font-size:1.3rem}
-    h2{font-size:2.2rem}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АГ Клинкер - Клинкерная плитка, кирпич, брусчатка</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'PT Sans', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #2c1810; 
+            background-color: #f9f5f0; 
+        }
+        header { 
+            background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%); 
+            color: white; 
+            padding: 1.5rem 0; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 2rem; 
+        }
+        .logo { font-size: 1.8rem; font-weight: 700; }
+        nav ul { list-style: none; display: flex; }
+        nav li { margin-left: 2.5rem; }
+        nav a { 
+            color: #fafafa; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.3s; 
+        }
+        nav a:hover { color: #ffd54f; }
+        .hero { 
+            background: linear-gradient(rgba(93,64,55,0.6), rgba(141,110,99,0.6)), url("hero-bg.jpg") center/cover no-repeat; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+            margin-top: 90px; 
+            font-weight: 700;
+        }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 1rem; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+        }
+        .hero p { font-size: 1.3rem; }
+        section { 
+            padding: 5rem 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .products { background: #faf7f3; }
+        .products h2, section h2 { 
+            font-size: 2.5rem; 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            color: #3e2723; 
+        }
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 2rem; 
+        }
+        .product { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
+            text-align: center; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .product:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
+        }
+        .product-img { 
+            width: 100%; 
+            height: 220px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 1rem; 
+        }
+        .product h3 { color: #4e342e; margin-bottom: 0.5rem; }
+        footer { 
+            background: #3e2723; 
+            color: #e0e0e0; 
+            text-align: center; 
+            padding: 2.5rem; 
+            font-size: 0.95rem; 
+        }
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            nav ul { flex-direction: column; gap: 1rem; } 
+            nav li { margin: 0; }
+        }
+    </style>
 </head>
 <body>
-
-<div class="top-bar">
-    <div class="brand">Фасад18</div>
-    <div class="address">г. Ижевск, ул. Славянское шоссе, 0/6</div>
-</div>
-
-<header class="hero">
-    <div class="hero-bg" id="heroBg"></div>
-    <h1>ОБЛИЦОВОЧНЫЙ КИРПИЧ</h1>
-    <p>Премиум материалы для фасадов. Керамика, клинкер, гиперпрессованный — прочность и эстетика на века</p>
-    <a href="#materials" class="cta">СМОТРЕТЬ КАТАЛОГ</a>
-</header>
-
-<section id="materials" class="materials">
-    <h2>Облицовочные материалы</h2>
-    <div class="materials-grid">
-        <div class="material-card">
-            <h3>🔥 Керамический кирпич</h3>
-            <p>Морозостойкость 200+ циклов. Экологичный, разнообразие текстур и цветов.</p>
+    <header>
+        <nav>
+            <div class="logo">АГ Клинкер</div>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#products">Продукция</a></li>
+                <li><a href="#about">О компании</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <div>
+            <h1>AG Klinker</h1>
+            <p>Клинкерная плитка, кирпич и брусчатка<br>премиум-класса из Германии и Италии</p>
         </div>
-        <div class="material-card">
-            <h3>⚡ Клинкерный кирпич</h3>
-            <p>Прочность М300. Водопоглощение всего 1‑6 %. Для экстремальных условий.</p>
+    </section>
+    <section id="products" class="products">
+        <h2>Продукция</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="plitka1.jpg" alt="Клинкерная плитка 1" class="product-img">
+                <h3>Фасадная плитка</h3>
+                <p>Экологичная облицовка с европейским качеством.</p>
+            </div>
+            <div class="product">
+                <img src="plitka2.jpg" alt="Клинкерная плитка 2" class="product-img">
+                <h3>Клинкерный кирпич</h3>
+                <p>Прочность и долговечность для любых фасадов.</p>
+            </div>
+            <div class="product">
+                <img src="plitka3.jpg" alt="Клинкерная плитка 3" class="product-img">
+                <h3>Клинкерная брусчатка</h3>
+                <p>Для мощения дорог и территорий.</p>
+            </div>
+            <div class="product">
+                <img src="plitka4.jpg" alt="Клинкерная плитка 4" class="product-img">
+                <h3>Терракотовые панели</h3>
+                <p>Навесные вентилируемые фасады.</p>
+            </div>
         </div>
-        <div class="material-card">
-            <h3>💎 Гиперпрессованный</h3>
-            <p>Имитация натурального камня. Идеален для цоколей и ландшафта.</p>
-        </div>
-    </div>
-</section>
-
-<section class="gallery-section">
-    <h2>Наши работы</h2>
-    <div class="gallery">
-        <!-- Блок «красный кирпич фасад» – ваше изображение, сейчас в виде base64‑заглушки -->
-        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGR8aGRgZGRodHR0dHR0eHR0dHR0aHSggGBolHR0eITEhJSkrLi4uHR8zODMtNygtLisBCgoKDg0OGxAQGy0lHyYtLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgcBAv/EADcQAAEDAwIEAwUHBQAAAAAAABAgMEBRESITEGE1FhcYGRkaGxBzKxwdHwFTLh8f/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EAC8RAAICAQIEBAYDAQAAAAAAAAABAhEDBBIhMUEFE1FhcnGRobHR8COx/9oADAMBAAIRAxEAPwD9RREQEREBERAJPcKpG2yZJpPVNQRhQTextTukJALdwJIBfJ4I+NQ6nUnDv6TGbfKsA+SxfrXoxz0mlhY2lZncscCv8AhDSqpVqhSqPXzNK5jTmmt/6hvvR1Hti5eT9Vfym+CdOdjBXproObGcDQGkXyUHuMypvKl5XV6gy6RDUyV81r3QVFJwuKN1VFTeXKNccjbuW/ogKsrJYZ5UaYkEekSO6P1K/BYJsvBad8rbv8AVeL/OPWrEZ3vVY4Tb8MTHNqWHU45kRLUAKpAmcU8VB20lG9QSQRM8iqZGoMLPmZgEBe/A9R40th4krUjVF6GZduzTZA5FpuWAt4RslI9coRKMpVaBt0qj/MmlP5QXgslSaKKj04JR1dHxUjTZKzPE/eJt+T3FKDlBJRttJJFwbpOQ6Ta3GZeQrqioyqgtP6RUERAREQEREBERCB40ZUTeV+F0f1KIR6j22x+X6FN9jjudIs73SBgj9CeDvG3A9B4k52vNgk5ZMGW+Uu3x8e8R6bJYj5S6Ofaw4Z4by7RBooh7w6/EZ1hqDyv55bzTT/ADj+8et9Jn5jHlTKbjU+DY+0if4qdOlWJ5Lj00+0TfWsonKDknkOfKT6PXrWX5fHcjtS3eQCnM9ZJY9XyVSR+JQraMSX4rVEUqIkWo+iFIR9kwXH7Ug9PDPeRY7g9Tz3EhXNI6bNOlh1xYYhqOKsSS1IR4P3rkntIpMLALMPOeJxve8Y+5zpJRqVebcUvcHplNYFK3dC7vD5b/E9s6dvGPrXKsscz6jDgpHDRcYHqmVtSaanUQgXLbhVe5VpY8nKcDunLBH4/jgPPWnXbeThKv19PjrWdK+1s7V0uy2jE4gPrEFNV3OrPDixfPP0HoFW/mvHmTeRshOWnfyklV7STvlIpGJnZHzR9SuB3cOGHfv8ibJiLE05QeA16LoXTlPVZ7CPLkaRLAt8mkasVSc+RwYY9UeF8jK+rsSpeu5TbilOlrfJVR7g6z/D8PpxXJyKDJ9ymDyGzadqvFzGVp9luW/77OHg78REz06x0Ip+PMuLPOZUk4rXWqKcPPcJ4BI5A+FA43057zV9SS0nJiYUzQ8KGUjqtrRI+GPrgD8u+h9182ftVd7R5zp+dif+046qw0zO3t3/FDW03IG35IfqcqdZat9BUPeVQEREBERAREQEREAQf/2Q==" alt="Красный кирпич (заглушка)">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg==" alt="Клинкерный дом (заглушка)">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg==" alt="Текстурный кирпич (заглушка)">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg==" alt="Забор кирпич (заглушка)">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg==" alt="Комбинированный фасад (заглушка)">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg==" alt="Коттедж облицовка (заглушка)">
-    </div>
-</section>
-
-<section class="contacts">
-    <h2>Контакты</h2>
-    <p>📞 +7 (991) 197 32 57</p>
-    <p>✉️ fasad18@gmail.com</p>
-    <p>📍 Ижевск, ул. Славянское шоссе, 0/6</p>
-</section>
-
-<footer>
-    <p>&copy; 2026 КирпичСтрой. Чёрный дизайн. Все права защищены.</p>
-</footer>
-
-<script>
-/* Параллакс‑эффект для hero */
-window.addEventListener('scroll',()=>{
-    const y=window.pageYOffset;
-    document.getElementById('heroBg').style.transform=`translateY(${y*-0.6}px)`;
-});
-/* Плавный скролл к каталогу */
-document.querySelector('.cta').addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector('#materials').scrollIntoView({behavior:'smooth'});
-});
-</script>
-
+    </section>
+    <section id="about">
+        <h2>О компании</h2>
+        <p>AG Klinker — лидер в производстве клинкерных материалов. Три современных завода в Китае оснащены оборудованием из Германии и Италии. Годовая мощность — 4,5 млн м².</p>
+        <p>Продукция сертифицирована по европейским стандартам, устойчива к морозам и влаге.</p>
+    </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Тел: +7 (495) 777-88-99 | Email: info@agklinker.ru</p>
+        <p>Москва, ул. Примерная, 123</p>
+    </section>
+    <footer>
+        <p>&copy; 2026 ООО «АГ Клинкер». Все права защищены. ОГРН 1247700250742</p>
+    </footer>
 </body>
 </html>
