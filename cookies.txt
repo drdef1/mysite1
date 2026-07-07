@@ -1,8 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.xn--18-6kcau0fta.xn--p1ai	TRUE	/	FALSE	1999999999	__ddg8_	77Rx9Mr72wVz1kpe
-.xn--18-6kcau0fta.xn--p1ai	TRUE	/	FALSE	1999999999	__ddg10_	1783432648
-.xn--18-6kcau0fta.xn--p1ai	TRUE	/	FALSE	1999999999	__ddg9_	78.85.10.94
-.xn--18-6kcau0fta.xn--p1ai	TRUE	/	FALSE	1999999999	__ddg1_	w0YPX5aLetcVjjCCh1lU
-.yandex.ru	TRUE	/	FALSE	1999999999	bh	YN6LtNIGag/s69e6D7udubEG1e+fzg4=
-
